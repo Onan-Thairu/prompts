@@ -36,7 +36,7 @@ const Nav = () => {
       </Link>
 
       {/* { alert(session?.user)} */}
-      { console.log(Object.values(providers))}
+      {/* { console.log(Object.values(providers))} */}
       
         {/* Desktop Navigation */}
         <div className="sm:flex hidden">
@@ -59,11 +59,11 @@ const Nav = () => {
                   />
                 </Link>
               </div>
-            ): (
+            ) : (
               <>
                 {
                   providers && Object.values(providers).map((provider) => {
-                    (
+                    return (
                       <button 
                         type="button"
                         key={provider.name}
@@ -131,7 +131,7 @@ const Nav = () => {
               <>
                 {
                   providers && Object.values(providers).map((provider) => {
-                    (
+                    return (
                       <button 
                         type="button"
                         key={provider.name}
