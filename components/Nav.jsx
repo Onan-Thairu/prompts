@@ -26,7 +26,7 @@ const Nav = () => {
     <nav className="flex-between w-full mb-16 pt-3">
       <Link href="/" className="flex gap-2 flex-center">
         <Image 
-          src="/assets/images/logo.svg"
+          src={session?.user.image}
           alt="Prompts Logo"
           width={30}
           height={30}
@@ -34,9 +34,6 @@ const Nav = () => {
         />
         <p className="logo_text">Prompts</p>
       </Link>
-
-      {/* { alert(session?.user)} */}
-      {/* { console.log(Object.values(providers))} */}
       
         {/* Desktop Navigation */}
         <div className="sm:flex hidden">
@@ -47,7 +44,7 @@ const Nav = () => {
                   Create Post
                 </Link>
 
-                <button type="button" onClick={ () => {} } className="outline_btn" >Sign Out</button>
+                <button type="button" onClick={ () => signOut() } className="outline_btn" >Sign Out</button>
 
                 <Link href="/profile">
                   <Image
@@ -86,7 +83,7 @@ const Nav = () => {
             session?.user ? (
               <div className="flex">
                   <Image
-                    src="/assets/images/logo.svg"
+                    src={session?.user.image}
                     width={37}
                     height={37}
                     className="rounded-full"
@@ -117,7 +114,7 @@ const Nav = () => {
                           type="button"
                           onClick={() => {
                             setToggleDropdown(false)
-                            // signOut()
+                            signOut()
                           }}
                           className="mt-5 w-full black_btn"
                         >
